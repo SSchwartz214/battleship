@@ -11,23 +11,23 @@ class ShipTest < Minitest::Test
     assert_equal 3, submarine.length
   end
 
-  def test_it_starts_with_no_damage
+  def test_it_starts_with_full_hp
     destroyer = Ship.new(2)
     submarine = Ship.new(3)
 
-    assert_equal 0, destroyer.damage
-    assert_equal 0, submarine.damage
+    assert_equal 2, destroyer.hp
+    assert_equal 3, submarine.hp
   end
 
   def test_it_starts_off_the_board
     destroyer = Ship.new(2)
     submarine = Ship.new(3)
 
-    assert_equal nil, destroyer.start_space
-    assert_equal nil, submarine.start_space
+    assert_nil destroyer.start_space
+    assert_nil submarine.start_space
 
-    assert_equal nil, destroyer.end_space
-    assert_equal nil, submarine.end_space
+    assert_nil destroyer.end_space
+    assert_nil submarine.end_space
   end
 
   def test_it_can_be_placed_on_board
@@ -45,4 +45,30 @@ class ShipTest < Minitest::Test
       assert_equal "A4", submarine.end_space
   end
 
+  def test_it_can_be_fired_at
+    destroyer = Ship.new(2)
+    submarine = Ship.new(3)
+
+    destroyer.fire_at
+    submarine.fire_at
+
+    assert_equal 1, destroyer.hp
+    assert_equal 2, submarine.hp
+  end
+
+  def test_it_can_be_sunk
+    destroyer = Ship.new(2)
+    submarine = Ship.new(3)
+
+    2.times do
+      destroyer.fire_at
+    end
+
+    3.times do
+      submarine.fire_at
+    end
+
+    assert destroyer.sunk?
+    assert submarine.sunk?
+  end
 end

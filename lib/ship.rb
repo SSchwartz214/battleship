@@ -1,12 +1,12 @@
 class Ship
   attr_reader :length,
-              :damage,
+              :hp,
               :start_space,
               :end_space
 
   def initialize(length)
     @length = length
-    @damage = 0
+    @hp = length
     @start_space = nil
     @end_space = nil
   end
@@ -14,6 +14,14 @@ class Ship
   def place(start_space, end_space)
     @start_space = start_space
     @end_space = end_space
+  end
+
+  def fire_at
+    @hp -= 1
+  end
+
+  def sunk?
+    @hp == 0
   end
 
 end
