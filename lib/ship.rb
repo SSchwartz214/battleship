@@ -16,7 +16,7 @@ class Ship
     @end_space = end_space
   end
 
-  def fire_at
+  def hit
     @hp -= 1
   end
 

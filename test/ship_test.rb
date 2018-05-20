@@ -49,8 +49,8 @@ class ShipTest < Minitest::Test
     destroyer = Ship.new(2)
     submarine = Ship.new(3)
 
-    destroyer.fire_at
-    submarine.fire_at
+    destroyer.hit
+    submarine.hit
 
     assert_equal 1, destroyer.hp
     assert_equal 2, submarine.hp
@@ -61,11 +61,11 @@ class ShipTest < Minitest::Test
     submarine = Ship.new(3)
 
     2.times do
-      destroyer.fire_at
+      destroyer.hit
     end
 
     3.times do
-      submarine.fire_at
+      submarine.hit
     end
 
     assert destroyer.sunk?
