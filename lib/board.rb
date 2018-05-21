@@ -10,7 +10,7 @@ class Board
   end
 
   def place_ship(ship, row, column)
-    grid[row][column] += ship
+    grid[row][column] = ship
   end
 
 

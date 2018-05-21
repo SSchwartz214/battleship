@@ -20,9 +20,12 @@ class BoardTest < Minitest::Test
   def test_ship_can_be_placed_on_it
     board = Board.new
     destroyer = Ship.new(2)
+    submarine = Ship.new(3)
 
     board.place_ship(destroyer, 0, 0)
+    board.place_ship(destroyer, 0, 0)
 
-    assert_instance_of destroyer, board.grid[0][0]["A1"]
+
+    assert_equal destroyer, board.grid[0][0]["A1"]
   end
 end
