@@ -1,6 +1,7 @@
 require './test/test_helper'
 require './lib/board'
 require './lib/space'
+require './lib/ship'
 
 class BoardTest < Minitest::Test
 
@@ -11,13 +12,17 @@ class BoardTest < Minitest::Test
   end
 
   def test_it_has_spaces
-    skip
-    space = Space.new("A1")
-    board = Board.new(space)
+    board = Board.new
 
-    assert_equal space, board.grid[0]["A1"]
-
-
+    assert_instance_of Space, board.grid[0][0]["A1"]
   end
 
+  def test_ship_can_be_placed_on_it
+    board = Board.new
+    destroyer = Ship.new(2)
+
+    board.place_ship(destroyer, 0, 0)
+
+    assert_instance_of destroyer, board.grid[0][0]["A1"]
+  end
 end

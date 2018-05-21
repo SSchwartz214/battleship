@@ -30,7 +30,7 @@ class ShipTest < Minitest::Test
     assert_nil submarine.end_space
   end
 
-  def test_it_can_be_placed_on_board
+  def test_it_knows_its_position
     destroyer = Ship.new(2)
     submarine = Ship.new(3)
 
