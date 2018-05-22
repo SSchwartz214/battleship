@@ -8,10 +8,4 @@ class Board
               [{"D1" => Space.new("D1")}, {"D2" => Space.new("D2")}, {"D3" => Space.new("D3")}, {"D4" => Space.new("D4")}]
             ]
   end
-
-  def place_ship(ship, row, column)
-    grid[row][column] = ship
-  end
-
-
 end
