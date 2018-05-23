@@ -7,7 +7,7 @@ class Space
     @hit = false
   end
 
-  def human_display
+  def player_1_display
     if @occupied == false && @hit == false
       ' '
     elsif @occupied == true && @hit == true
