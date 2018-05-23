@@ -1,12 +1,32 @@
 class Space
-  attr_reader :coordinates,
-              :occupied,
-              :attacked
+  attr_reader :occupied,
+              :hit
 
-  def initialize(coordinates)
-    @coordinates = coordinates
+  def initialize
     @occupied = false
-    @attacked = false
+    @hit = false
+  end
+
+  def human_display
+    if @occupied == false && @hit == false
+      ' '
+    elsif @occupied == true && @hit == true
+      '🎯'
+    elsif @occupied == true && @hit == false
+      '🚢'
+    elsif @occupied == false && @hit == false
+      '🌊'
+    end
+  end
+
+  def cpu_display
+    if @occupied == false && @hit == false
+      ' '
+    elsif @occupied == true && @hit == true
+      '🎯'
+    elsif @occupied == false && @hit == false
+      '🌊'
+    end
   end
 
 end

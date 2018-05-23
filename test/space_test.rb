@@ -12,13 +12,13 @@ end
 def test_space_starts_unoccupied
   space = Space.new("A1")
 
-  refute space.occupied
+  refute space.occupied?
 end
 
 def test_space_starts_unattacked
   space = Space.new("A1")
 
-  refute space.attacked
+  refute space.hit?
 end
 
 end
