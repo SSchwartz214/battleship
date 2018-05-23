@@ -23,11 +23,11 @@ class ShipTest < Minitest::Test
     destroyer = Ship.new(2)
     submarine = Ship.new(3)
 
-    assert_nil destroyer.start_space
-    assert_nil submarine.start_space
+    assert_nil destroyer.bow_coordinates
+    assert_nil submarine.stern_coordinates
 
-    assert_nil destroyer.end_space
-    assert_nil submarine.end_space
+    assert_nil destroyer.bow_coordinates
+    assert_nil submarine.stern_coordinates
   end
 
   def test_it_knows_its_position
@@ -36,13 +36,13 @@ class ShipTest < Minitest::Test
 
       destroyer.place("A1", "B1")
 
-      assert_equal "A1", destroyer.start_space
-      assert_equal "B1", destroyer.end_space
+      assert_equal "A1", destroyer.bow_coordinates
+      assert_equal "B1", destroyer.stern_coordinates
 
       submarine.place("A2", "A4")
 
-      assert_equal "A2", submarine.start_space
-      assert_equal "A4", submarine.end_space
+      assert_equal "A2", submarine.bow_coordinates
+      assert_equal "A4", submarine.stern_coordinates
   end
 
   def test_it_can_be_fired_at

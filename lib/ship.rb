@@ -1,19 +1,19 @@
 class Ship
   attr_reader :length,
               :hp,
-              :start_space,
-              :end_space
+              :bow_coordinates,
+              :stern_coordinates
 
   def initialize(length)
     @length = length
     @hp = length
-    @start_space = nil
-    @end_space = nil
+    @bow_coordinates = nil
+    @stern_coordinates = nil
   end
 
-  def place(start_space, end_space)
-    @start_space = start_space
-    @end_space = end_space
+  def place(bow_coordinates, stern_coordinates)
+    @bow_coordinates = bow_coordinates
+    @stern_coordinates = stern_coordinates
   end
 
   def hit
