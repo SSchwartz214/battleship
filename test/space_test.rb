@@ -3,22 +3,17 @@ require './lib/space'
 
 class SpaceTest < Minitest::Test
 
-def test_it_has_coordinates
-  space = Space.new("A1")
-
-  assert_equal "A1", space.coordinates
-end
 
 def test_space_starts_unoccupied
-  space = Space.new("A1")
+  space = Space.new
 
-  refute space.occupied?
+  assert_equal false, space.occupied
 end
 
 def test_space_starts_unattacked
-  space = Space.new("A1")
+  space = Space.new
 
-  refute space.hit?
+  assert_equal false, space.hit
 end
 
 end

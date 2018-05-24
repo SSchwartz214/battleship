@@ -12,7 +12,7 @@ class HumanPlayer
 
   def fire(coordinates, ship)
     coordinates = convert_coordinates(coordinates)
-    ship.hit
+    ship.fired_at
   end
 
   def convert_coordinates(coordinates)

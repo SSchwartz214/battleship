@@ -11,7 +11,7 @@ class Space
     @occupied = true
   end
 
-  def hit
+  def fired_at
     @hit = true
   end
 
