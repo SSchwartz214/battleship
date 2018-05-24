@@ -6,7 +6,7 @@ require './lib/space'
 
 board = Board.new
 dialogue = Dialogue.new
-human_player = HumanPlayer.new
+p1 = HumanPlayer.new
 destroyer = Ship.new(2)
 space = Space.new
 
@@ -18,6 +18,7 @@ until user_input == "q" || user_input == "quit"
 
   if user_input == "p" || user_input == "play"
     puts dialogue.play
+    p1.place_ship(destroyer, user_input, board)
   end
 
   if user_input == 'i' || user_input == "instructions"
