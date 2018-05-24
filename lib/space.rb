@@ -7,14 +7,22 @@ class Space
     @hit = false
   end
 
-  def player_1_display
+  def occupy
+    @occupied = true
+  end
+
+  def hit
+    @hit = true
+  end
+
+  def human_display
     if @occupied == false && @hit == false
       ' '
     elsif @occupied == true && @hit == true
       '🎯'
     elsif @occupied == true && @hit == false
       '🚢'
-    elsif @occupied == false && @hit == false
+    elsif @occupied == false && @hit == true
       '🌊'
     end
   end
@@ -24,7 +32,7 @@ class Space
       ' '
     elsif @occupied == true && @hit == true
       '🎯'
-    elsif @occupied == false && @hit == false
+    elsif @occupied == false && @hit == true
       '🌊'
     end
   end
