@@ -12,11 +12,10 @@ class HumanPlayer
 
   def fire(coordinates, ship)
     coordinates = convert_coordinates(coordinates)
-    ship.fired_at
+    ship.hit
   end
 
   def convert_coordinates(coordinates)
-
     split_coordinates = coordinates.upcase.split(' ')
       split_coordinates.map do |single_coordinate|
         assign_coordinates_to_input(single_coordinate)
